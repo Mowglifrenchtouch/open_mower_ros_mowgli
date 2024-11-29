@@ -22,9 +22,6 @@ find_package(
         Boost
 )
 
-add_service(EmergencyService ${CMAKE_CURRENT_SOURCE_DIR}/../../services/emergency_service.json)
-add_service(DiffDriveService ${CMAKE_CURRENT_SOURCE_DIR}/../../services/diff_drive_service.json)
-
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -170,8 +167,6 @@ add_executable(mower_comms_v1
 
 add_dependencies(mower_comms_v1 ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(mower_comms_v1 ${catkin_LIBRARIES}
-        EmergencyService
-        DiffDriveService
 )
 
 #############
