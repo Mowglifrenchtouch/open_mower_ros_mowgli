@@ -172,6 +172,7 @@ bool IdleBehavior::redirect_joystick() {
 uint8_t IdleBehavior::get_sub_state() {
   return 0;
 }
+
 uint8_t IdleBehavior::get_state() {
   return mower_msgs::HighLevelStatus::HIGH_LEVEL_STATE_IDLE;
 }
