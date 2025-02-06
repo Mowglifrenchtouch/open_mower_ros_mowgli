@@ -4,7 +4,6 @@
 
 #include "mower_service.hpp"
 
-
 bool MowerService::Configure() {
   // No configuration needed
   return true;
@@ -12,9 +11,9 @@ bool MowerService::Configure() {
 void MowerService::OnCreate() {
 }
 void MowerService::OnStart() {
-  mower_running_ = false;
 }
-void MowerService::OnStop() { }
+void MowerService::OnStop() {
+}
 
 void MowerService::tick() {
   StartTransaction();
@@ -33,12 +32,10 @@ void MowerService::tick() {
   CommitTransaction();
 }
 
-
 bool MowerService::OnMowerEnabledChanged(const uint8_t& new_value) {
-  mower_running_ = new_value;
   return true;
 }
 
-MowerService::MowerService(const uint16_t service_id, SimRobot &robot)
-    : MowerServiceBase(service_id, 1000000), robot_(robot) {
+MowerService::MowerService(const uint16_t service_id, SimRobot& robot)
+    : MowerServiceBase(service_id, 100000000), robot_(robot) {
 }
