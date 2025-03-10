@@ -4,6 +4,11 @@
 
 #include "mower_service.hpp"
 
+bool MowerService::OnStart() {
+  mower_running_ = false;
+  return true;
+}
+
 void MowerService::tick() {
   StartTransaction();
   bool emergency;
